@@ -1,9 +1,14 @@
 import React from "react";
 
-const TaskItem = () => {
+const TaskItem = (props) => {
 
     return (
-        <li className="task-warning" id="task1">
+        <li draggable
+            onDragStart={(event) => {
+                props.onDragStart(event, props.taskId)
+            }}
+            className="task-warning" id="task1">
+
             <div className="checkbox checkbox-primary checkbox-single float-right">
                 <input type="checkbox" aria-label="Single checkbox Two"/>
                 <label/>

@@ -10,12 +10,26 @@ const TaskCategory = (props) => {
                 <p className="sub-header">
                     Your awesome text goes here. Your awesome text goes here.
                 </p>
-                <ul className="sortable-list taskList list-unstyled" id="upcoming">
+                <ul
+                    onDragOver={props.onDragOver}
+                    onDrop={(event) => {
+                        props.onDrop(event, props.title)
+                    }}
+                    className="sortable-list taskList list-unstyled" id="upcoming">
 
-                    <TaskItem/>
-                    <TaskItem/>
-                    <TaskItem/>
-                    <TaskItem/>
+                    {
+                        props.tasks.map((task) => {
+                            return <TaskItem
+                                key={task.id}
+                                taskId={task.id}
+                                onDragStart={props.onDragStart}/>
+                        })
+                    }
+
+                    {/*<TaskItem/>*/}
+                    {/*<TaskItem/>*/}
+                    {/*<TaskItem/>*/}
+                    {/*<TaskItem/>*/}
 
                 </ul>
                 <a href="#" className="btn btn-primary btn-block mt-3 waves-effect waves-light"><i
