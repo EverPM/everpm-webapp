@@ -20,7 +20,7 @@ const TaskCategoryList = () => {
                 {/*<TaskCategory title={"Completed"}/>*/}
 
                 <TaskCategory data={{id: "10", title: "Upcoming", tasks: [1, 2, 3]}}/>
-                <TaskCategory data={{id: "15", title: "In Progress", tasks: [4, 5, 6]}}/>
+                <TaskCategory data={{id: "15", title: "In Progress", tasks: [4]}}/>
                 <TaskCategory data={{id: "20", title: "Review", tasks: [7, 8, 9]}}/>
                 <TaskCategory data={{id: "25", title: "Completed", tasks: [10, 11, 12]}}/>
 

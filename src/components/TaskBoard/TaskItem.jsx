@@ -18,8 +18,9 @@ const TaskItem = (props) => {
                             userSelect: "none",
                             backgroundColor: snapshot.isDragging
                                 ? "#263B4A"
-                                : "#456C86",
-                            color: "white",
+                                : "",
+                            color: snapshot.isDragging
+                                ?"white":"",
                             ...provided.draggableProps.style
                         }}
                         className="task-warning" id="task1">

@@ -5,17 +5,18 @@ import TaskItem from "./TaskItem";
 const TaskCategory = (props) => {
 
     return (
-        <Droppable droppableId={props.data.id} key={props.data.id}>
-            {(provided, snapshot) => {
-                return (
-                    <div className="col-12 col-xl">
+
+        <div className="col-12 col-xl">
+            <Droppable droppableId={props.data.id} key={props.data.id}>
+                {(provided, snapshot) => {
+                    return (
                         <div className="card-box"
                              {...provided.droppableProps}
                              ref={provided.innerRef}
                              style={{
                                  background: snapshot.isDraggingOver
                                      ? "lightblue"
-                                     : "lightgrey"
+                                     : ""
                              }}>
                             <h4 className="header-title">{props.data.title}</h4>
                             <p className="sub-header">
@@ -37,13 +38,14 @@ const TaskCategory = (props) => {
                                 }
 
                             </ul>
-                            <a href="#" className="btn btn-primary btn-block mt-3 waves-effect waves-light"><i
-                                className="mdi mdi-plus-circle"></i> Add New</a>
+                            {provided.placeholder}
+                            <a href="#" className="btn btn-primary btn-block mt-3 waves-effect waves-light">
+                                <i className="mdi mdi-plus-circle"></i> Add New</a>
                         </div>
-                    </div>
-                )
-            }}
-        </Droppable>
+                    )
+                }}
+            </Droppable>
+        </div>
     );
 };
 
